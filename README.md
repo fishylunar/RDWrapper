@@ -1,6 +1,7 @@
+# RDWrapper
+
 <img src="https://github.com/FiskDk/RDWrapper/raw/master/RDWrapper.png" width="128">
 
-# RDWrapper
  Make your own custom Discord client!
 
 ## How to use : 
