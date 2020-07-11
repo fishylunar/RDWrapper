@@ -61,7 +61,7 @@ try {
     //file exists
     console.log("You have disabled the loading of the default themes")
     } else {
- rdTheme = await getScript('');
+ rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/RDWrapper/master/ExampleScript/main.css');
 rdTheme1 = await getScript('https://raw.githubusercontent.com/FiskDk/RDWrapper/master/ExampleScript/main.css');  
 }
 } catch(err) {
